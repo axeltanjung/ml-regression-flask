@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  regression:
+    image: regression-flask:latest
+    container_name: regression-flask
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./server:/app/server
+    ports:
+      - 5000:5000
+    networks:
+      - regression-flask
+
+networks:
+  regression-flask:
+    name: regression-flask
