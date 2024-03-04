@@ -7,3 +7,7 @@
 
 # Run with docker
 1. `docker-compose up --build -d`
+
+
+
+![Alt text](image.png)
