@@ -8,7 +8,21 @@
 # Run with docker
 1. `docker build -t regression-flask:latest .`
 2. `docker-compose up --build -d`
-
+# Run in docker container
+3. `docker exec -it regression-flask bash`
+4. `cd models`
+4. `python3 regression.py`
+# Run in local
+3. Export environment variables in terminal session
+```
+export AWS_ACCESS_KEY_ID=minio
+export AWS_SECRET_ACCESS_KEY=minio123
+export MLFLOW_S3_ENDPOINT_URL=http://localhost:9000
+```
+5. Open `models/regression.py`
+5. Change `mlflow.set_tracking_uri("http://web:5000")` to `mlflow.set_tracking_uri("http://localhost:5000")`
+6. Change `dataset = pd.read_csv('/app/data/salary.csv')` to `dataset = pd.read_csv('data/salary.csv')`
+4. `python3 models/regression.py`
 
 
 ![Alt text](image.png)

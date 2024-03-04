@@ -7,14 +7,14 @@ import os
 import mlflow
 from mlflow.models.signature import infer_signature
 
-mlflow.set_tracking_uri("http://localhost:5000")
+mlflow.set_tracking_uri("http://web:5000")
 
  # Get path to file dynamically
 # WD = os.path.dirname(os.path.abspath(__file__))
 
 def train():
     # running locally
-    dataset = pd.read_csv('data/salary.csv')
+    # dataset = pd.read_csv('data/salary.csv')
 
     # define x (independent) and y (dependent) variable
     # X = dataset.iloc[:, :-1].values
@@ -35,7 +35,7 @@ def train():
 
     with mlflow.start_run() as run:
         # read data source
-        dataset = pd.read_csv('data/salary.csv')
+        dataset = pd.read_csv('/app/data/salary.csv')
 
         # define x (independent) and y (dependent) variable
         X = dataset.iloc[:, :-1].values

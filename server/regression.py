@@ -9,6 +9,7 @@ WD = os.path.dirname(os.path.abspath(__file__))
 
 # generate flask app object
 app = Flask(__name__)
+mlflow.set_tracking_uri("http://web:5000")
 # Read pickle regression model
 # model = pickle.load(open(os.path.dirname(WD) + '/models/pickled/model.pkl','rb'))
 
