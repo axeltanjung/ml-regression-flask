@@ -9,9 +9,29 @@ from mlflow.models.signature import infer_signature
 
 mlflow.set_tracking_uri("http://localhost:5000")
 
+ # Get path to file dynamically
+# WD = os.path.dirname(os.path.abspath(__file__))
+
 def train():
-    # Get path to file dynamically
-    # WD = os.path.dirname(os.path.abspath(__file__))
+    # running locally
+    dataset = pd.read_csv('data/salary.csv')
+
+    # define x (independent) and y (dependent) variable
+    # X = dataset.iloc[:, :-1].values
+    # y = dataset.iloc[:, 1].values
+
+    # # Split data to train (67%) and test (33%)
+    # X_train, X_test, y_train, _ = train_test_split(X, y, test_size = 0.33, random_state = 0)
+
+    # # Develop regression model
+    # regressor = LinearRegression()
+    # regressor.fit(X_train, y_train)
+
+    # y_pred = regressor.predict(X_test)
+
+    # print(y_pred)
+
+    # =======================================
 
     with mlflow.start_run() as run:
         # read data source

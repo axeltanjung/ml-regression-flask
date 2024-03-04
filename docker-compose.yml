@@ -10,7 +10,7 @@ services:
       - ./models:/app/models
       - ./server:/app/server
     ports:
-      - 5000:5000
+      - 5002:5000
     networks:
       - machine-learning
 
