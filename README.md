@@ -20,9 +20,11 @@ export AWS_SECRET_ACCESS_KEY=minio123
 export MLFLOW_S3_ENDPOINT_URL=http://localhost:9000
 ```
 5. Open `models/regression.py`
-5. Change `mlflow.set_tracking_uri("http://web:5000")` to `mlflow.set_tracking_uri("http://localhost:5000")`
-6. Change `dataset = pd.read_csv('/app/data/salary.csv')` to `dataset = pd.read_csv('data/salary.csv')`
-4. `python3 models/regression.py`
+6. Change `mlflow.set_tracking_uri("http://web:5000")` to `mlflow.set_tracking_uri("http://localhost:5000")`
+7. Change `dataset = pd.read_csv('/app/data/salary.csv')` to `dataset = pd.read_csv('data/salary.csv')`
+8. `python3 models/regression.py`
+9. Get run id from MLFlow UI
+10. Open browser and go to `http://localhost:5002?exp={experience}&run_id={run_id}`
 
 
 ![Alt text](image.png)
